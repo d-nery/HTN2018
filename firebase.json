@@ -20,6 +20,15 @@
           }
         ]
       }
+    ],
+    "rewrites": [
+      {
+        "source": "/host",
+        "destination": "/pages/host.html"
+      }, {
+        "source": "/guest",
+        "destination": "/pages/guest.html"
+      }
     ]
   },
   "firestore": {

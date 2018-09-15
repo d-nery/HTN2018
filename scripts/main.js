@@ -18,7 +18,7 @@
 $(document).ready(() => {
     $('#sign-in').on('click', () => {
         var provider = new firebase.auth.GoogleAuthProvider();
-        firebase.auth().signInWithPopup(provider);
+        firebase.auth().signInWithPopup(provider).catch(err => console.log(err));
     });
 
     $('#sign-out').on('click', () => {
