@@ -1,27 +1,135 @@
-<!DOCTYPE html>
+<!doctype html>
+<!--
+  Copyright 2015 Google Inc. All rights reserved.
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+      https://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Learn how to use the Firebase platform on the Web">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>festë</title>
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <!-- Web Application Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="festë">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Festë">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#303F9F">
+
+  <!-- Tile icon for Win8 -->
+  <meta name="msapplication-TileColor" content="#3372DF">
+  <meta name="msapplication-navbutton-color" content="#303F9F">
+
+  <!-- Material Design Lite -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
+  <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+
+  <!-- App Styling -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900">
 </head>
 <body>
+  <div class="container">
+      <header class="blog-header py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+          <div class="col-4 text-center">
+            <h1><a class="blog-header-logo text-dark" style="font-size: 150px" href="#">festë</a></h1>
+          </div>
+          <div class="col-4 d-flex justify-content-end align-items-center mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
+              
+              <div id="user-container">
+                  <div hidden id="user-pic"></div>
+                  <div hidden id="user-name"></div>
+                  <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+                    Sign-out
+                  </button>
+                  <button id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey">
+                    <i class="material-icons">account_circle</i>Sign-in with Google
+                  </button>
+              </div>
+          </div>
+        </div>
+      </header>
 
-    <h1>Hello</h1>
+    <div class="nav-scroller py-1 mb-2">
+      <nav class="nav d-flex justify-content-end">
+        <a class="p-2 text-muted" href="#">Our Mission</a>
+        <a class="p-2 text-muted" href="#">FAQ</a>
+        <a class="p-2 text-muted" href="#">Contact</a>
+      </nav>
+    </div>
 
-    <script src="/__/firebase/5.5.0/firebase-app.js"></script>
-    <script src="/__/firebase/5.5.0/firebase-auth.js"></script>
-    <script src="/__/firebase/5.5.0/firebase-firestore.js"></script>
-    <script src="/__/firebase/5.5.0/firebase-storage.js"></script>
-    <script src="/__/firebase/5.5.0/firebase-messaging.js"></script>
-    <script src="/__/firebase/init.js"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"></script>
+    <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+      <div class="col-md-6 px-0">
+        <h1 class="display-4 font-italic">Growing roots, building community</h1>
+        <p class="lead my-3">cheesy reasons why holidays are important and people need to celebrate</p>
+        <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Learn more about our mission...</a></p>
+      </div>
+    </div>
+  <div class="row mb-2">
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-primary">Do good</strong>
+              <h3 class="mb-0">
+                <a class="text-dark" href="/pages/host.html">Join as a host</a>
+              </h3>
+              <p class="card-text mb-auto">something about quiz </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-success">Find community</strong>
+              <h3 class="mb-0">
+                <a class="text-dark" href="/pages/guest.html">Join as a guest</a>
+              </h3>
+              <p class="card-text mb-auto">take a quiz and stuff</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
 
-    <script src="scripts/guest.js"></script>
+<!-- Import and configure the Firebase SDK -->
+<!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
+<!-- If you do not want to serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
+<script src="/__/firebase/5.5.0/firebase-app.js"></script>
+<script src="/__/firebase/5.5.0/firebase-auth.js"></script>
+<script src="/__/firebase/5.5.0/firebase-firestore.js"></script>
+<script src="/__/firebase/5.5.0/firebase-storage.js"></script>
+<script src="/__/firebase/5.5.0/firebase-messaging.js"></script>
+<script src="/__/firebase/init.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 
+<script src="scripts/main.js"></script>
 </body>
 </html>
